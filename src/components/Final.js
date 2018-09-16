@@ -21,6 +21,7 @@ class Final extends Component {
      const array = this.props.hobbies; 
     return (
       <div className="center">
+       <h4>All set! Here is your final avatar</h4>
         <div className="final-avatar">
          <div className="final-hobbies">
            <img className="img-fluid" src={array.includes('Gardening')? gardening: movies} alt=""/>
