@@ -1,0 +1,16 @@
+.App {
+    font-family: sans-serif;
+  }
+  
+.container{
+  min-height: 100vh;
+  position: relative;
+}
+  .avatar{
+    width: 60px;
+    margin: 40px auto;
+  }
+
+  .avatar img{
+    max-width: 100%;
+  }

@@ -1,0 +1,29 @@
+.center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+}
+
+.final-avatar{
+    width: 100%;
+}
+.field-gender{
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.field-gender img{
+    max-width: 100%;
+}
+.final-hobbies{
+    position: absolute;
+    width: 100px;
+    left: -10px;
+    bottom: 20px;
+}

@@ -1,0 +1,11 @@
+.v-center{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+.error{
+    color: #ff003b;
+    font-size: 12px;
+    padding: 5px 0;
+}
