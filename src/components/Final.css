@@ -24,6 +24,13 @@
 .final-hobbies{
     position: absolute;
     width: 100px;
-    left: -10px;
-    bottom: 20px;
+    left: 5px;
+    bottom: 30px;
+    z-index: 2;
+}
+.person-type{
+    position: absolute;
+    top: 60px;
+    right: 5px;
+    width: 120px;
 }

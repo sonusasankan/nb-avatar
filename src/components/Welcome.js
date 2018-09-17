@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import female from "../images/female.png";
 import male from "../images/male.png";
 
-import "./Welcome.css";
 class Welcome extends Component {
   constructor(props) {
     super(props);

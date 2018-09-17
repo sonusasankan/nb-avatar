@@ -4,7 +4,6 @@ import gardening from "../images/gardening.png";
 import camping from "../images/camping.png";
 import movies from "../images/movies.png";
 
-import './Welcome.css'
 class TellUs extends Component {
   state = {
     person: {
@@ -21,15 +20,22 @@ class TellUs extends Component {
             hobbies: [...this.state.person.hobbies, e.target.name]
           }
         });
+        break;
+
       }
 
-      case false:
-        const hobbiesCopy = this.state.person.hobbies.filter(item => item !== e.target.name);
-
+      case false:{
         this.setState({
-          hobbies: hobbiesCopy
-        })
-
+          ...this.state,
+          person: {
+              ...this.state.person,
+              hobbies: this.state.person.hobbies.filter(
+                  item => item !== e.target.name
+              )
+          }
+        });
+        break;
+      }
       default:
         return this.state;
     }
@@ -38,16 +44,17 @@ class TellUs extends Component {
   onSubmit = e => {
     e.preventDefault();
     this.props.hobbyUpdate(this.state.person.hobbies);
-    this.props.history.push("/final");
+    this.props.history.push("/nature");
 
   }; 
   render() {
     return (
-      <div className="v-center">
+      <div className="v-center text-center">
+       <h3 className="mb-4">Tell us your hobbies</h3>
         <div className="row">
           <form className="form-hobbies" onSubmit={this.onSubmit}>
            <div className="d-inline-flex">
-            <div className="form-check mr-5">
+            <div className={'form-check mr-5' + (this.state.person.hobbies.includes('Gardening') ? " checked":'')}>
               <input
                 type="checkbox"
                 name="Gardening"
@@ -62,7 +69,7 @@ class TellUs extends Component {
                 <img className="img-fluid" src={gardening} alt="" />
               </label>
             </div>
-            <div className="form-check mr-5">
+            <div className={'form-check mr-5' + (this.state.person.hobbies.includes('Movies') ? " checked":'')}>
               <input
                 type="checkbox"
                 name="Movies"
@@ -77,7 +84,7 @@ class TellUs extends Component {
                 <img className="img-fluid" src={movies} alt="" />
               </label>
             </div>
-            <div className="form-check">
+            <div className={'form-check' + (this.state.person.hobbies.includes('camping') ? " checked":'')}>
               <input
                 type="checkbox"
                 name="camping"

@@ -7,10 +7,12 @@ import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Layout/Header";
 import Login from "./components/Login";
 import Welcome from "./components/Welcome";
-import TellUs from "./components/TellUs";
+import Hobby from "./components/Hobby";
+import Behaviour from "./components/Behaviour";
 import Final from "./components/Final";
 
 import './styles.css';
+import './components/global.css';
 
 export class App extends Component {
   state = {
@@ -20,7 +22,8 @@ export class App extends Component {
       email: "",
       password: "",
       gender: "",
-      hobbies: []
+      hobbies: [],
+      behaviour: [],
     }
   };
 
@@ -42,6 +45,12 @@ hobbyUpdate = (hobbies) =>{
   this.setState({
     ...this.state,
     person: { ...this.state.person, hobbies}
+  });
+}
+behaviourUpdate = (behaviour) =>{
+  this.setState({
+    ...this.state,
+    person: { ...this.state.person, behaviour}
   });
 }
 
@@ -77,7 +86,15 @@ hobbyUpdate = (hobbies) =>{
             <Route 
               path="/moreaboutyou"
               render={props => (
-                <TellUs  hobbyUpdate={this.hobbyUpdate}
+                <Hobby  hobbyUpdate={this.hobbyUpdate}
+                {...props}
+                />
+              )}
+            />
+            <Route 
+              path="/nature"
+              render={props => (
+                <Behaviour behaviourUpdate={this.behaviourUpdate}
                 {...props}
                 />
               )}
@@ -87,6 +104,7 @@ hobbyUpdate = (hobbies) =>{
               render={props => (
                 <Final gender={this.state.person.gender}
                  hobbies={this.state.person.hobbies} 
+                 behaviour={this.state.person.behaviour} 
                 {...props}
                 />
               )}
